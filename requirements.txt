@@ -1,0 +1,11 @@
+streamlit
+google-play-scraper
+transformers
+torch
+scipy
+scikit-learn
+google-generativeai
+python-dotenv
+langdetect
+tqdm
+
