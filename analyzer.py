@@ -15,7 +15,6 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel("gemini-2.5-flash-lite-preview-06-17")
 
-# Load sentiment model
 SENTIMENT_MODEL = "nlptown/bert-base-multilingual-uncased-sentiment"
 tokenizer = AutoTokenizer.from_pretrained(SENTIMENT_MODEL)
 sentiment_model = AutoModelForSequenceClassification.from_pretrained(SENTIMENT_MODEL)
@@ -30,7 +29,6 @@ def parse_llm_response(text):
     json_str = match.group()
     return json.loads(json_str)
 
-# 1. Sentiment Analysis
 def sentiment_analysis(text):
     inputs = tokenizer(text, return_tensors="pt", truncation=True)
     with torch.no_grad():
@@ -48,7 +46,6 @@ def sentiment_analysis(text):
         "score": float(probs[stars - 1])
     }
 
-# 2. Fake Review Detection – Gemini Destekli
 def is_fake_review(text):
     text_norm = text.strip().lower()
     if text_norm in _seen_reviews:
@@ -84,7 +81,6 @@ Respond in this exact JSON format: {{"is_fake": true/false, "reason": "your expl
     except Exception as e:
         return False, f"LLM Error: {e}"
 
-# 3. Interesting Review Detection – Gemini Destekli
 def is_interesting_review(text):
     prompt = f"""
 You are a review analysis agent. Determine whether the following review contains interesting content. 
