@@ -1,5 +1,7 @@
 # 🎮 AI-Powered Play Store Review Analysis System
 
+Note: Please see the demo video first --> https://drive.google.com/file/d/19be7r07Kb0hb2haPpoYb0lNjqqGhdM2W/view?usp=sharing
+
 A comprehensive AI-powered system for analyzing Google Play Store reviews with advanced NLP capabilities including fake review detection, sentiment analysis, and interesting content identification.
 
 ## 🚀 Features
