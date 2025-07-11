@@ -85,9 +85,9 @@ def analyze_all_reviews(game_choice, progress=gr.Progress()):
         progress(0.1, desc=f"Found {len(reviews)} reviews. Starting analysis...")
         
         data = []
-        total = min(len(reviews), 50)  # Limit to 50 reviews for demo
+        #total = min(len(reviews), 50)  # Limit to 50 reviews for demo
         
-        for i, r in enumerate(reviews[:total]):
+        for i, r in enumerate(reviews):
             text = r.get("content", "")
             if not text.strip():
                 continue
