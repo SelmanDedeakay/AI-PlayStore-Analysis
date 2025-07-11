@@ -83,3 +83,7 @@ Thumbs.db
 *.bak
 *.swp
 *.tmp
+reviews_analysis.json
+reviews_analysis.csv
+.gradio/certificate.pem
+google_play_reviews_com.flatgames.patrolofficer_2500_reviews.csv
